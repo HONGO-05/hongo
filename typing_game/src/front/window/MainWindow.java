@@ -3,6 +3,7 @@ package front.window;
 import front.admin.AdminPanel;
 import front.quiz.QuizPanel;
 
+import front.screen_mode.QuizScreenMode;
 import front.screen_mode.ScreenMode;
 import front.title.TitlePanel;
 
@@ -11,8 +12,9 @@ import java.awt.*;
 
 public class MainWindow extends JFrame {
     ScreenMode screenMode = ScreenMode.QUIZ;
-    final int WIDTH = 800;
-    final int HEIGHT = 600;
+    QuizScreenMode quizScreenMode = QuizScreenMode.QUIZ_TITLE;
+    final int WIDTH = 720;
+    final int HEIGHT = 540;
     CardLayout layout = new CardLayout();
     QuizPanel quizPanel;
     AdminPanel adminPanel;
@@ -41,12 +43,11 @@ public class MainWindow extends JFrame {
     }
 
     public void preparePanels(){
-
         adminPanel = new AdminPanel();
         this.add(adminPanel, "管理画面");
         titlePanel = new TitlePanel();
         this.add(titlePanel, "タイトル");
-        quizPanel = new QuizPanel();
+        quizPanel = QuizPanel.getInstance();
         this.add(quizPanel, "タイピングゲーム");
         this.pack();
 
@@ -76,6 +77,7 @@ public class MainWindow extends JFrame {
         }
 
     }
+
 }
 
 

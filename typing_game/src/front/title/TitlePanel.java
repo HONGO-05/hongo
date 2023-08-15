@@ -15,7 +15,7 @@ public class TitlePanel extends JPanel {
 
     public void prepareComponents(){
         JButton quizButton = new JButton("GAME");
-        quizButton.setBounds(200, 250,200, 50);
+        quizButton.setBounds(150, 240,200, 50);
         quizButton.addActionListener(
                 e -> {
                     MainWindow.getInstance(ScreenMode.QUIZ);
@@ -24,7 +24,7 @@ public class TitlePanel extends JPanel {
         this.add(quizButton);
 
         JButton adminButton = new JButton("ADMIN");
-        adminButton.setBounds(400, 250,200, 50);
+        adminButton.setBounds(350, 240,200, 50);
         adminButton.addActionListener(
                 e -> {
                     MainWindow.getInstance(ScreenMode.ADMIN);
